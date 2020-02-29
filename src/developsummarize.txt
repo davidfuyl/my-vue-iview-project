@@ -1,0 +1,11 @@
+<my-button @clickBtn="myBtnClick('父组件参数', arguments)"></my-button>
+btnClick() {
+        this.$emit('clickBtn', "子组件参数")
+    }
+methods: {
+    myBtnClick() {
+        console.log(arguments)
+        const fatherArgs = arguments[0] // 父组件参数
+        const sonArgs = arguments[1][0] // 子组件参数
+    }
+}
